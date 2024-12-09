@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/style.css">
+    <title>Book Ticket</title>
+</head>
+<body>
+    <header>
+        <h1>Book a Ticket</h1>
+        <br/>
+    </header>
+    <form method="POST">
+        <select name="schedule_id" required>
+            <option value="">Select Schedule</option>
+            {% for schedule in schedules %}
+            <option value="{{ schedule['ScheduleID'] }}">
+                Bus {{ schedule['BusID'] }} - {{ schedule['Route'] }} ({{ schedule['DepartureTime'] }})
+            </option>
+            {% endfor %}
+        </select>
+        <input type="number" name="seat_number" placeholder="Seat Number" required>
+        <button type="submit">Book Ticket</button>
+    </form>
+</body>
+</html>

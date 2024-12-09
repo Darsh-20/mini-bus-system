@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/style.css">
+    <title>Schedules</title>
+</head>
+<body>
+    <header>
+        <h1>Bus Schedules</h1>
+        <br/>
+    </header>
+    <table>
+        <tr>
+            <th>Bus ID</th>
+            <th>Route</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Available Seats</th>
+        </tr>
+        {% for schedule in schedules %}
+        <tr>
+            <td>{{ schedule['BusID'] }}</td>
+            <td>{{ schedule['Route'] }}</td>
+            <td>{{ schedule['DepartureTime'] }}</td>
+            <td>{{ schedule['ArrivalTime'] }}</td>
+            <td>{{ schedule['AvailableSeats'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
